@@ -74,7 +74,7 @@ def get_data():
     loader = WebBaseLoader(iot_urls)
     iot_docs = loader.load()
 
-    for i in range(2, len(iot_docs)):
+    for i in range(1, len(iot_docs)):
         iot_clean(iot_docs[i])
 
     h2 = "GEC   Home   faculty   Infrastructure   LABS Classrooms  Department Library     Academic Info   R&D  Advisory Committee Committee Members Projects                                    IN-HOUSE R&D PROJECTS EXTERNAL FUNDED PROJECTS    Funded Schemes Publications     Department Activities   Student Activities                                    PATRIOT ACTIVITIES DRONE CLUB ACTIVITIES ISF ACTIVITIES SDP ACTIVITIES    Faculty Activities Summary of Student Activities Summary of Faculty Activities     Placements   Alumni   Alumni List Suggestions Alumni Activities     Gallery   Contact Us"
@@ -82,9 +82,6 @@ def get_data():
     iot_docs[0].page_content = iot_docs[0].page_content.replace("\n"," ")
     iot_docs[0].page_content = iot_docs[0].page_content.replace(h2," ")
     iot_docs[0].page_content = iot_docs[0].page_content.replace(f2," ")
-    iot_docs[1].page_content = iot_docs[1].page_content.replace("\n"," ")
-    iot_docs[1].page_content = iot_docs[1].page_content.replace(h2," ")
-    iot_docs[1].page_content = iot_docs[1].page_content.replace(f2," ")
 
     ## Combining Main and IoT Pages
     documents = main_docs + iot_docs
