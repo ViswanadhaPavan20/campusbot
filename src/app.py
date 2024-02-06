@@ -8,7 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from data import get_data
-
+import os
 load_dotenv()
 
 def get_vectorstore():
@@ -22,8 +22,8 @@ def get_vectorstore():
     # create a vectorstore from the chunks
     # vector_store = Chroma.from_documents(document_chunks, OpenAIEmbeddings())
 
-    url = "https://7fc18add-984e-4dd2-aca7-f8cd6a4d72e6.us-east4-0.gcp.cloud.qdrant.io:6333"
-    api_key = "VuJjC33SoTlJoR23_zCaar2vIndLXX69uYsDdcBSKrA1YGEiYxs5LQ"
+    url = os.getenv("url")
+    api_key = os.getenv("api_key")
     embeddings = OpenAIEmbeddings()
     vector_store = Qdrant.from_documents(
         document_chunks,
