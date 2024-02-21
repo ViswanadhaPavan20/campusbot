@@ -16,7 +16,7 @@ def get_vectorstore():
     document = get_data()
     
     # split the document into chunks
-    text_splitter = RecursiveCharacterTextSplitter()
+    text_splitter = RecursiveCharacterTextSplitter(separators=["\n\n","\n"])
     document_chunks = text_splitter.split_documents(document)
     
     # create a vectorstore from the chunks
@@ -56,7 +56,7 @@ def get_conversational_rag_chain(retriever_chain):
     llm = ChatOpenAI()
     
     prompt = ChatPromptTemplate.from_messages([
-      ("system", "You are a helpful question-answering chatbot, Answer the user's questions based only on the below context:\n\n{context}"),
+      ("system", "You are a helpful question-answering chatbot for Seshadri Rao Gudlavalleru Engineering College website and IoT Branch. You will be answering the queries regarding the college and IoT branch. Answer the user's questions based only on the below context:\n\n{context}"),
       MessagesPlaceholder(variable_name="chat_history"),
       ("user", "{input}"),
     ])

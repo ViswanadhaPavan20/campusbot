@@ -15,6 +15,7 @@ def iot_clean(doc):
   footer2 ="Opening Hours    Mon - Fri :  9.00 am - 6.00 pm  Saturday : 9.00 am - 5.00 pm  Sun :\xa0 \xa0Closed       Quick Links    Infrastructure    Academic Info   Placements   faculty       Address    SR Gudlavalleru Engineering College, Gudlavalleru, Krishna Dist, Andhra Pradesh, INDIA. 521356     08674-273737     hod.iot@gecgudlavalleru.ac.in            Last Updated  31  January  2024           © 2024 SR Gudlavalleru Engineering College             GEC   Home   faculty  Infrastructure  LABS Classrooms  Department Library    Academic Info   R&D  Advisory Committee Committee Members  Projects  IN-HOUSE R&D PROJECTS EXTERNAL FUNDED PROJECTS      Department Activities  Student Activities  PATRIOT ACTIVITIES DRONE CLUB ACTIVITIES ISF ACTIVITIES SDP ACTIVITIES HELPING HANDS   Faculty Activities    Placements   Alumni  Alumin List Suggetions    Gallery   Contact Us" 
   doc.page_content = doc.page_content.replace("\n"," ")
   doc.page_content = doc.page_content.replace(header," ")
+  doc.page_content = doc.page_content.replace("view more", " ")
   doc.page_content = doc.page_content.replace(footer," ")
   doc.page_content = doc.page_content.replace(footer2," ")
   return doc
@@ -74,15 +75,18 @@ def get_data():
     loader = WebBaseLoader(iot_urls)
     iot_docs = loader.load()
 
-    for i in range(1, len(iot_docs)):
+    for i in range(2, len(iot_docs)):
         iot_clean(iot_docs[i])
 
     h2 = "GEC   Home   faculty   Infrastructure   LABS Classrooms  Department Library     Academic Info   R&D  Advisory Committee Committee Members Projects                                    IN-HOUSE R&D PROJECTS EXTERNAL FUNDED PROJECTS    Funded Schemes Publications     Department Activities   Student Activities                                    PATRIOT ACTIVITIES DRONE CLUB ACTIVITIES ISF ACTIVITIES SDP ACTIVITIES    Faculty Activities Summary of Student Activities Summary of Faculty Activities     Placements   Alumni   Alumni List Suggestions Alumni Activities     Gallery   Contact Us"
     f2 = "Last Updated  31  January  2024           © 2024 SR Gudlavalleru Engineering College             GEC   Home   faculty  Infrastructure  LABS Classrooms  Department Library    Academic Info   R&D  Advisory Committee Committee Members  Projects  IN-HOUSE R&D PROJECTS EXTERNAL FUNDED PROJECTS      Department Activities  Student Activities  PATRIOT ACTIVITIES DRONE CLUB ACTIVITIES ISF ACTIVITIES SDP ACTIVITIES HELPING HANDS   Faculty Activities    Placements   Alumni  Alumin List Suggetions    Gallery   Contact Us"
+    # IoT Main Page
     iot_docs[0].page_content = iot_docs[0].page_content.replace("\n"," ")
     iot_docs[0].page_content = iot_docs[0].page_content.replace(h2," ")
     iot_docs[0].page_content = iot_docs[0].page_content.replace(f2," ")
 
+    # IoT Faculty Page
+    iot_docs[1].page_content = "They are Faculty of IoT Department: \n\n\n" + iot_docs[1].page_content
     ## Combining Main and IoT Pages
     documents = main_docs + iot_docs
 
