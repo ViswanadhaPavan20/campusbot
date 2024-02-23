@@ -72,7 +72,7 @@ def get_data():
     main_docs[0].page_content = main_docs[0].page_content.replace(h1," ")
     main_docs[0].page_content = main_docs[0].page_content.replace(f1," ")
     main_docs[0].page_content = main_docs[0].page_content.replace("08674-273957", " ")
-    main_docs[0].page_content = "Principal of SRGEC" + main_docs[0].page_content
+    main_docs[1].page_content = "Principal of SRGEC" + main_docs[1].page_content
     
 
     ## IoT Pages Data
