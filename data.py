@@ -54,7 +54,18 @@ def get_data():
     "https://gecgudlavalleru.ac.in/chairman.php",
     "https://gecgudlavalleru.ac.in/profile_of_vvsr.php",
     "https://gecgudlavalleru.ac.in/awards.php",
-    "https://gecgudlavalleru.ac.in/induction_progrmme.php"
+    "https://gecgudlavalleru.ac.in/induction_progrmme.php",
+    "https://gecgudlavalleru.ac.in/accreditations.php",
+    "https://gecgudlavalleru.ac.in/central_library/At-a-Glance",
+    "https://gecgudlavalleru.ac.in/infrastructure/Laboratories",
+    ]
+
+    college_details_urls = [
+    "https://gecgudlavalleru.ac.in/infrastructure/Class-Rooms",
+    "https://gecgudlavalleru.ac.in/central_library/At-a-Glance",
+    "https://gecgudlavalleru.ac.in/infrastructure/Laboratories",
+    "https://gecgudlavalleru.ac.in/infrastructure/Seminar-Halls",
+    "https://gecgudlavalleru.ac.in/amenities/Gymnasium",
     ]
 
 
@@ -91,7 +102,29 @@ def get_data():
 
     # IoT Faculty Page
     iot_docs[1].page_content = "They are Faculty of IoT Department: \n\n\n" + iot_docs[1].page_content
-    ## Combining Main and IoT Pages
-    documents = main_docs + iot_docs
+    
+    ## College Details Data
+    loader = WebBaseLoader(college_details_urls)
+    college_details_docs = loader.load()
+    
+
+    def clean_college_details(doc):
+      header = "         SR Gudlavalleru Engineering College | An Autonomous Institute                                    Admission Enquiry Form       Latest News :       Student Development Programme  on  Business Analytics – Power BI and R  Software 6-11 January, 2024   In view of the prevailing climatic conditions, the National level Literary and Cultural events Contest scheduled during 7-8,December is postponed. Further schedule will be intimated later.   A National Level Inter-Engineering Collegiate Tournament on 18-20 Nov, 2023(Registration Last Date: 15, Nov 2023)    SRGEC Ratnas Awards (Extended Upto 15-11-2023)   Placements for the Class of 2023 – 890* (as on 21st August 2023) (CIVIL-27, EEE-80, ME-98, ECE-285, CSE-265, IT-78, MBA-57).   Student Background Verification Circular   IMPORTANT Notice: All Education Verification requests should be sent to verifications@gecgudlavalleru.ac.in             News & Updates    Downloads    Links                                 About GEC   About us Promoters Vision and Mission   Administration   Chairman Secretary & Correspondent Principal Vice Principals    Directors  AS&A PGCRD   Quality Policy Imp Contact Numbers    Why GEC?   Accreditations Awards Best Practices Institutional Distinctiveness Future Plans    Academics   Departments  Programmes Offered   UG Programmes PG Programmes    Admission Procedure Fee Details Rules And Regulations Academic calendar  Academic Awards  College Publications    Examinations   CoE Assistant COEs Regulations Examination Rules Circulars   B.Tech M.Tech MBA   Fee Notifications   B.Tech M.Tech MBA    Results   B.Tech M.Tech MBA    Time Tables    B.Tech M.Tech MBA   Downloads(AT) Contact Us    Placements   Goals and Objectives MOUS Training programs Esteemed Recruiters Placement Statistics Assessment Partners Office Bearers Downloads    R&D   Research Ethics Committee Research Promotion Policy Seed Money (In-House R&D Projects) External Funded Projects Consultancy Publications PhD Guidance     Facilities    Central Library   At a Glance Dept wise Books Info Journals Library Committee  Self Learning Courses NPTEL Web Courses Videos Remote Access    Infrastructure   Class Rooms Laboratories Seminar Halls Central Lecture Theatre  Geo Tagged Photos    Amenities Block   Gymnasium Indoor Stadium Built up area Guest Rooms  Canteen    Physical Education   Staff University Blues Achievements Facilities Fitness Center    NSS   NSS Committee Events Organized    Transportation Faculty Club Hostels  Others   Internet WI-FI Bank & ATM       Alumni   Alumni Website About Alumni Faculty Coordinators Alumni Office bearers Alumni Meet Alumni Activities DISA a way forward Scholarships Eminent Alumni   Gallery  NAAC-2023  SSR IIQA DVV   Library SRGEC Ratnas Awards Silver Jubilee Feedback Contact Us       A- A A+"
+      footer = "Testimonials     Nice college ,good atmosphere,great library Completed my graduation (B.Tech) (EEE)2014-2018 batch.   kunamneni raghu pradeep( EEE )     One of the best infrastructured college in AP. Students has a huge platform to reach their goals by well qualified lecturers.   Dheeraj korukonda( CSE )     Very good college with infrastructure , experienced faculty. College library is top among the libraries of andhrapradesh. Amenities(canteen, internal auditorium, play ground) for students are awesome.   vinay sairam( Google Review )          Quick Links    Ecap College Administration Imp Phone Numbers Departments Academic Calender Fee Details     Smart India Hackathon GEC RESULTS College News Letter ARIIA Reports-2022 RTI Cell Central Library            Contact us      Seshadri Rao Gudlavalleru Engineering College, Seshadri Rao Knowledge Village, Gudlavalleru, Krishna(dt), Andhra Pradesh 521356.  08674-273737 / 273888, +91 9848779121   08674-273957,   principal@gecgudlavalleru.ac.in       Location   How to reach us                 Last Updated 03 October 2023    Vistors Counter :                                    © 2024 SR Gudlavalleru Engineering College | An Autonomous Institute. All rights reserved | Made with  by SR Gudlavalleru Engineering College          Home About GEC  About us Promoters College Administration Governing Body Academic Council IQAC Members  Administration  Chairman Secretary & Correspondent Principal Vice Principal    Directors  AS&A PGCRD    Quality Policy Imp Contact Numbers    Why GEC?  Accreditations Awards    Academics  Departments  Programmes Offered  UG Programmes PG Programmes    Admission Procedure Rules And Regulations Academic calendar Academic Awards    Examinations  CoE Assistant COEs Regulations Examination Rules  Fee Notifications  B.Tech M.Tech MBA     Results  B.Tech M.Tech MBA     Time Tables  B.Tech M.Tech MBA    Downloads(AT) Contact Us    Placements  Goals and Objectives MOUS Training programs Esteemed Recruiters Placement Statistics Assessment Partners Office Bearers Downloads    R&D  Research Ethics Committee Research Promotion Policy Seed Money (In-House R&D Projects) External Funded Projects Consultancy Publications PhD Guidance     Facilities   Central Library  At a Glance Dept wise Books Info Journals Library Committee  NPTEL Web Courses Videos    Infrastructure  Class Rooms Laboratories Seminar Halls Central Lecture Theatre     Amenities Block  Gymnasium Indoor Stadium Built up area Guest Rooms  Canteen    Physical Education   Staff University Blues Events Organized Facilities Fitness Center    NSS  Events Organized NSS Regular Activities NSS Special Camp   Transportation Faculty Club Hostels  Others  Internet WI-FI Bank & ATM      Alumni  About Alumni Faculty Coordinators Alumni Office bearers Alumni Meet Alumni Activities DISA a way forward Scholarships Eminent Alumni   Gallery  NAAC-2023  SSR IIQA DVV   Library Silver Jubilee Feedback Contact Us"
+      sidebar = "About GEC  About us Promoters Vision and Mission Governing Body Academic Council  Administration   Chairman Secretary & Correspondent Principal Vice Principals   Directors   AS&A PGCRD   Innovation and Entrepreneurship Pre Incubation and Innovation Centers Innovation and Incubation Cell Quality Policy Imp Contact Numbers"
+      sidebar2 = "Facilities  Central Library  At a Glance Dept wise Books Info Journals Library Committee   Self Learning Courses NPTEL Web Courses Videos Remote Access   Infrastructure   Class Rooms Laboratories Seminar Halls Central Lecture Theatre    Amenities Block   Gymnasium Indoor Stadium Built up area Guest Rooms  Canteen   Physical Education   Staff University Blues Achievements Facilities Fitness Center   NSS   Events Organized    Transportation Faculty Club Hostels Others   Internet WI-FI Bank & ATM"
+      doc.page_content = doc.page_content.replace("\n"," ")
+      doc.page_content = doc.page_content.replace(header," ")
+      doc.page_content = doc.page_content.replace(footer," ")
+      doc.page_content = doc.page_content.replace(sidebar," ")
+      doc.page_content = doc.page_content.replace(sidebar2, " ")
+      return doc
+    
+    # Cleaning the college_details_data
+    for i in range(len(college_details_docs)):
+      clean_college_details(college_details_docs[i])
+
+    ## Combining Main, IoT and college details Pages into a single document collection
+    documents = main_docs + iot_docs + college_details_docs
 
     return documents
