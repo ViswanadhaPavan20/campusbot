@@ -45,8 +45,12 @@ streamlit run app.py
 
 This will start the Streamlit application, and you can interact with the chatbot through the provided interface.
 
-## Deployment
+## Interface
+<img width="704" alt="result_3" src="https://github.com/MaruthiKo/campusbot/assets/63769209/4265cc94-994d-4452-b730-b9d46c8dad65">
+<img width="498" alt="result_4" src="https://github.com/MaruthiKo/campusbot/assets/63769209/ccdff3bd-3c88-48a8-b6ec-9cba36abf3fb">
+<img width="604" alt="result_5" src="https://github.com/MaruthiKo/campusbot/assets/63769209/7f2b7fdd-eb32-4348-a149-18c0f6de29e3">
 
+## Deployment
 Campus Bot is deployed on Streamlit Cloud, which allows for easy access and scalability. You can access the deployed chatbot at the following URL: [CampusBot](https://iotbot.streamlit.app/)
 
 ## Contributing
