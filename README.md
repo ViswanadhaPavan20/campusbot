@@ -1,6 +1,6 @@
 # Campus Bot - Chatbot for SRGEC (Seshadri Rao Gudlavalleru Engineering College)
 
-Campus Bot is an AI-powered chatbot designed to assist students, faculty, and visitors with their queries regarding SRGEC (Sri Rajagopala Garu Engineering College, Gudlavalleru). It utilizes the RAG (Retrieval-Augmented Generation) architecture, combining information retrieval from a web-scraped knowledge base with natural language generation capabilities.
+Campus Bot is an AI-powered chatbot designed to assist students, faculty, and visitors with their queries regarding SRGEC (Seshadri Rao Gudlavalleru Engineering College, Gudlavalleru). It utilizes the RAG (Retrieval-Augmented Generation) architecture, combining information retrieval from a web-scraped knowledge base with natural language generation capabilities.
 
 ## Features
 
